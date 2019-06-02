@@ -1,8 +1,8 @@
 { 
 	"manifest_version": 2, 
-	"name": "My App", 
+	"name": "Surfboard", 
 	"version": "1.0", 
-	"description": "Description here.", 
+	"description": "Surf the web only using your keyboard!", 
 	"icons": { 
 		"48": "icons/border-48.png" 
 	}, 
