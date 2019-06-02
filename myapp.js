@@ -17,14 +17,12 @@ var create = 0;
 //     if (e.keyCode==90 && e.ctrlKey)
 //         $("body").append("<p>ctrl+z detected!</p>");
 // });
+document.onkeydown = function(event){
 
-document.body.addEventListener("keypress", function(event){ 
-
-    // alert(String.fromCharCode(event.charCode));
-    
-    if(String.fromCharCode(event.charCode)=='`'){
-        if(flag == 0)
-        {
+    event = event || window.event;
+    if (event.ctrlKey && event.keyCode == 32){
+        
+        if(flag == 0){
             flag = 1;
             
             if(create == 0){
@@ -59,6 +57,7 @@ document.body.addEventListener("keypress", function(event){
                     // arrow.style.padding="1px";
                     // arrow.style.height=String(x)+"px";
                     arrow.style.position = "relative";
+                    arrow.style.zIndex = "1";
                     
                     arrow.style.width="0";
                     arrow.style.height="0";
@@ -125,11 +124,12 @@ document.body.addEventListener("keypress", function(event){
             }
             flag = 0;
         }
+        
     }
+
         // EL { content: attr(title); }
 
-}); 
-
+};
 // window.onload = function(){
         
 // }
