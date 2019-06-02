@@ -2,14 +2,6 @@ document.body.style.border = "5px solid blue";
 
 var list_of_links = document.links;
 
-function showChar(e){
-    alert(
-      "Key Pressed: " + String.fromCharCode(e.charCode) + "\n"
-      + "charCode: " + e.charCode + "\n"
-      + "CTRL key pressed: " + e.ctrlKey + "\n"
-    );
-}
-
 var flag = 0;
 var create = 0;
 
@@ -80,16 +72,15 @@ document.onkeydown = function(event){
                     // arrow.style.marginTop = "-5px";
                 }
 
-                var textboxholder = document.createElement("span");
-                var textbox = document.createElement("input");
-                // textbox.setAttribute("type",text);
-                
+                var textbox = document.createElement("INPUT");
+                textbox.setAttribute("type","text");
+                textbox.disabled=false;
                 // textboxholder.style.width = "200px";
-                textboxholder.style.display="relative";
-                textboxholder.style.top = "50%";
-                textboxholder.style.left = "100px";
-                textboxholder.appendChild(textbox);
-                document.body.appendChild(textboxholder);              
+                // textboxholder.style.display="relative";
+                // textboxholder.style.top = "50%";
+                // textboxholder.style.left = "100px";
+                // textboxholder.appendChild(textbox);
+                document.body.appendChild(textbox);              
 
                 // var person = prompt("Please enter a tag number", "0");
                 // if (person == null || person == "") {
@@ -99,6 +90,7 @@ document.onkeydown = function(event){
                 //     if(i<document.links.length)
                 //     document.links[parseInt(person)].click();
                 // }
+
 
                 
             }
