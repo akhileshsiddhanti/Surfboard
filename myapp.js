@@ -1,10 +1,11 @@
-document.body.style.border = "5px solid blue";
+document.body.style.border = "5px solid red";
 
 var list_of_links = document.links;
 
 var flag = 0;
 var create = 0;
-
+var textbox_created = 0;
+var text_length = 0;
 // $(document).keydown(function(e){
 //     if (e.keyCode==90 && e.ctrlKey)
 //         $("body").append("<p>ctrl+z detected!</p>");
@@ -12,8 +13,22 @@ var create = 0;
 document.onkeydown = function(event){
 
     event = event || window.event;
+
+    if(event.keyCode === 8 && textbox_created === 1) {
+        event.preventDefault();
+        var value = document.getElementsByClassName("surfboard")[0].value;
+        // alert(value);
+        if(value.length>=1) document.getElementsByClassName("surfboard")[0].value = value.substr(0,value.length-1);
+    }
+
+    if((event.keyCode === 13) && (textbox_created === 1)){
+        var value = document.getElementsByClassName("surfboard")[0].value;
+        if(value.length>=1 && !isNaN(value)){
+            document.links[parseInt(value)].click();
+        }
+    }
+
     if (event.ctrlKey && event.keyCode == 32){
-        
         if(flag == 0){
             flag = 1;
             
@@ -73,8 +88,25 @@ document.onkeydown = function(event){
                 }
 
                 var textbox = document.createElement("INPUT");
+                textbox_created = 1;
                 textbox.setAttribute("type","text");
                 textbox.disabled=false;
+
+                textbox.style.marginTop="50px";
+                textbox.style.marginLeft="40%";
+                textbox.style.width="400px";
+
+                textbox.className="surfboard";
+                textbox.focus();
+
+                // textbox.value = "Enter link number here...";
+                
+
+                document.body.addEventListener("keypress", function(event){
+                    textbox.value += String.fromCharCode(event.charCode);
+                });  
+                
+                
                 // textboxholder.style.width = "200px";
                 // textboxholder.style.display="relative";
                 // textboxholder.style.top = "50%";
@@ -82,13 +114,15 @@ document.onkeydown = function(event){
                 // textboxholder.appendChild(textbox);
                 document.body.appendChild(textbox);              
 
+
+
                 // var person = prompt("Please enter a tag number", "0");
                 // if (person == null || person == "") {
                 //     txt = "User cancelled the prompt.";
                 // } else {
-                //     var i = parseInt(person);
-                //     if(i<document.links.length)
-                //     document.links[parseInt(person)].click();
+                // var i = parseInt(person);
+                // if(i<document.links.length)
+                // document.links[parseInt(person)].click();
                 // }
 
 
@@ -98,6 +132,7 @@ document.onkeydown = function(event){
                 for(var i=0; i < document.getElementsByClassName("tooltips").length; i++){
                     document.getElementsByClassName("tooltips")[i].style.visibility = "visible";
                 }
+                document.getElementsByClassName("surfboard")[0].style.visibility = "visible";
                 // var person = prompt("Please enter a tag number", "0");
                 // if (person == null || person == "") {
                 //     txt = "User cancelled the prompt.";
@@ -106,7 +141,8 @@ document.onkeydown = function(event){
                 //     if(i<document.links.length)
                 //     document.links[parseInt(person)].click();
                 // }
-                flag = 1;    
+                flag = 1;
+                textbox_created=1;   
             }
         }
         else{
@@ -114,6 +150,8 @@ document.onkeydown = function(event){
             for(var i=0; i < document.getElementsByClassName("tooltips").length; i++){
                 document.getElementsByClassName("tooltips")[i].style.visibility = "hidden";
             }
+            document.getElementsByClassName("surfboard")[0].style.visibility = "hidden";
+            textbox_created=0;
             flag = 0;
         }
         
