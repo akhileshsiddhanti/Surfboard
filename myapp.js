@@ -23,12 +23,17 @@ document.onkeydown = function(event){
 
     if((event.keyCode === 13) && (textbox_created === 1)){
         var value = document.getElementsByClassName("surfboard")[0].value;
+        var click=0;
+        // alert(click);
         if(value.length>=1 && !isNaN(value)){
             document.links[parseInt(value)].click();
+            click+=1;
         }
+        // alert(click);
     }
 
     if (event.ctrlKey && event.keyCode == 32){
+        document.links[0].focus();
         if(flag == 0){
             flag = 1;
             
