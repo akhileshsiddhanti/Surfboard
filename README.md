@@ -1,4 +1,5 @@
 # surfboard
+![alt](surf_waves.jpg)
 Surf the web using only your keyboard!
 
 Programmers and Linux fans know it well that a Mouse can only slow you down. Not only this, mouse introduces an additional strain for elder and differently abled people who do not necessarily possess the motor skill to precisely operate a mouse. Keeping this in mind, Surfboard allows you to browse the web totally without your mouse. Surfboard can dramatically increase your browsing speeds and save time.
