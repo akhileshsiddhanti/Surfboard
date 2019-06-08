@@ -32,7 +32,7 @@ document.onkeydown = function(event){
         
     }
 
-    if ((event.ctrlKey && event.keyCode == 32) || (event.keyCode == 192)){ //CTRL+Space
+    if (event.ctrlKey && event.keyCode == 32){ //CTRL+Space
         links = document.links;
         links[0].focus();
 
