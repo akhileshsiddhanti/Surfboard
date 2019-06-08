@@ -1,4 +1,4 @@
-# surfboard
+# Surfboard
 ![alt](surf_waves.jpg)
 Surf the web using only your keyboard!
 
