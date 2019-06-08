@@ -9,7 +9,7 @@ How to use:
 
 1) Simply press CTRL+Space on any website to bring up a SurfBoard. You can see all clickable elements are now higlighted with a tag number.
 
-![alt](demo_1.jpg)
+![alt](demo_1.png)
 
 2) Type in the tag number and hit enter! If you want to hide tags and Surfboard again, press CTRL+Space again.
 
