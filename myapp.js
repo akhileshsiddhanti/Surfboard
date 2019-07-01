@@ -33,8 +33,9 @@ document.onkeydown = function(event){
     }
 
     if (event.ctrlKey && event.keyCode == 32){ //CTRL+Space
+        event.preventDefault();
         links = document.links;
-        links[0].focus();
+        // links[0].focus();
 
         if(flag == 0){
             flag = 1;
@@ -85,9 +86,10 @@ document.onkeydown = function(event){
             textbox.style.position="fixed";
             textbox.style.zIndex="9999";
             textbox.style.top = "0";
+            textbox.style.left= "37.5%";
             textbox.style.marginTop="50px";
-            textbox.style.marginLeft="40%";
-            textbox.style.width="400px";
+            // textbox.style.marginLeft="40%";
+            textbox.style.width="25%";
             textbox.style.fontSize="30px";
             textbox.style.height="50px";
             textbox.style.backgroundColor="rgba(211,211,211,0.8)";
@@ -95,7 +97,7 @@ document.onkeydown = function(event){
             textbox.style.borderStyle="solid";
             textbox.style.borderRadius="17px";
             textbox.style.textAlign="center";
-            textbox.style.borderColor="rgba(0,0,0,0.8)";
+            textbox.style.borderColor="rgba(0,0,0,0.7)";
 
             text_written = 0;
             
